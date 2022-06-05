@@ -18,7 +18,7 @@ Be sure to call the following hardware your own:
 	* 1x Keyboard and mouse ⌨️🖱️ *(here: Logitech K400+)*
 
 
-## Prepare the software, pt. 1 🦙 1️⃣
+## Prepare the Operating System (OS)
 
 1. Connect the Micro SD card to the computer
 2. Download, install, and run **Raspberry Pi Imager**:
@@ -34,33 +34,48 @@ Be sure to call the following hardware your own:
 2. Insert the Micro SD card into the Ras Pi, connect all cables/devices, and finally start the Ras Pi
 
 
-## Prepare the software, pt. 2 🦙 2️⃣
+## Setup the OS
+
+1. Go through the initial setup of the operating system
+2. Set keyboard layout:
+	1. _Applications Menu_ ➡ _Preferences_ ➡ _Keyboard and Mouse_
+	2. _Keyboard and Mouse Settings_ window ➡ _Keyboard_ tab ➡ _Keyboard Layout…_ button ➡ Select the layout
+2. Increase GPU memory:
+	1. _Applications Menu_ ➡ _Preferences_ ➡ _Raspberry Pi Configuration_
+	2. _Raspberry Pi Configuration_ window ➡ _Performance_ tab ➡ Set _GPU Memory_ to `256`
+	2. Reboot
+2. Set UI scaling:
+	1. _Applications Menu_ ➡ _Preferences_ ➡ _Appearance Settings_
+	2. _Appearance Settings_ window ➡ _Defaults_ tabs ➡ _Set Defaults_ button next to _For large screens_
+2. _Panel Preferences_ window ➡ _Panel Applets_ tab ➡ Add and configure _Resource monitors_
+
+
+## Prepare the software, pt. 1 🦙 1️⃣
 
 ⚠️ Keep in mind to replace `<USERNAME>` with the actual user name in the below commands.
 
-1. Go through the initial setup of the operating system
-2. Clone _this_ repository:
+1. Clone _this_ repository:
 	1. Run `mkdir -p ~/GitHub/IanStorm/`
 	2. Run `cd ~/GitHub/IanStorm/`
 	2. Run `git clone https://github.com/IanStorm/my-home-raspi.git`
-2. Configure _crontab_:
-	1. Run `crontab -e`, select `/bin/nano` as your editor, exit via <kbd>CTRL</kbd>+<kbd>X</kbd>
-	2. Configure an output handler: Run `sudo apt update && sudo apt install -y postfix`, select "Local only" during the setup
-	* ☝ _crontab_ logs are found at `/var/mail/<USERNAME>`
 2. Map cloned folder:
 	1. Run `sudo mkdir -p /opt/IanStorm/`
 	2. Run `sudo ln --symbolic /home/<USERNAME>/GitHub/IanStorm/my-home-raspi/htpc_bedroom/opt/IanStorm/my-home-raspi/ /opt/IanStorm/`
-2. Run `crontab -e`, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
+2. Configure _crontab_:
+	1. Run `crontab -e`, select `/bin/nano` as your editor, exit via <kbd>CTRL</kbd>+<kbd>X</kbd>
+	2. Configure an output handler: Run `sudo apt update && sudo apt install -y postfix`, select "Local only" during the setup
+	2. Run `crontab -e`, select `/bin/nano` as your editor, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
 ```sh
 # my-home-raspi
 @reboot sleep 10 && cd /home/<USERNAME>/GitHub/IanStorm/my-home-raspi/ && git reset --hard && git pull
 @reboot sleep 10 && /opt/IanStorm/my-home-raspi/on_booted.sh
 ```
 *
-	* Exit via <kbd>CTRL</kbd>+<kbd>X</kbd>, then <kbd>y</kbd>, and finally <kbd>Enter</kbd>
+	4. Exit via <kbd>CTRL</kbd>+<kbd>X</kbd>, then <kbd>y</kbd>, and finally <kbd>Enter</kbd>
+	* ☝ _crontab_ logs are found at `/var/mail/<USERNAME>`
 
 
-## Prepare the software, pt. 3 🦙 3️⃣
+## Prepare the software, pt. 2 🦙 2️⃣
 
 1. Configure _Chromium_:
 	1. Enable DRM compatibility:
@@ -92,6 +107,7 @@ Be sure to call the following hardware your own:
 ### Sources 📙
 
 * https://forums.raspberrypi.com/viewtopic.php?p=1990606
+* https://linuxhint.com/rasperberry_pi_wifi_wpa_supplicant/
 * https://www.electromaker.io/tutorial/blog/how-to-stream-netflix-on-raspberry-pi
 * https://github.com/raspberrypi/Raspberry-Pi-OS-64bit/issues/172#issuecomment-1123462739
 * https://jarrodstech.net/how-to-raspberry-pi-onedrive-sync/
