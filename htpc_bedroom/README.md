@@ -10,21 +10,28 @@ Be sure to call the following hardware your own:
 	* ...with a mouse, keyboard, display, etc.
 	* ...with an SD card reader
 * Permanent, i.e. dedicated to the Ras Pi:
-	* 1x Raspberry Pi 🥧 *(here: Raspberry Pi 3, Model B, 1GB RAM)*
-	* 1x Micro SD card *(here: SanDisk Ultra 32GB)*
+	* 1x Raspberry Pi 🥧 *(here: Raspberry Pi 4, Model B, 4GB RAM)*
+	* 1x Micro SD card *(here: SanDisk Ultra 128GB)*
 	* 1x Power supply, Raspberry Pi-compatible 🔌 *(here: Official Micro USB Power Supply)*
-	* 1x Ethernet cable; WiFi access is alternatively possible, but won't be covered here
+	* 1x Case, Raspberry Pi-compatible *(here: Argon One V2)*
+	* 1x HDMI cable
+	* 1x Keyboard and mouse ⌨️🖱️ *(here: Logitech K400+)*
 
 
 ## Prepare the software, pt. 1 🦙 1️⃣
 
 1. Connect the Micro SD card to the computer
 2. Download, install, and run **Raspberry Pi Imager**:
+	1. Choose OS: Raspberry Pi OS (other) ➡ **Raspberry Pi OS (64-bit)**
+	2. Write to the Micro SD card
 	* Tested with v1.7.2 on Windows
-	* Choose OS: Raspberry Pi OS (other) ➡ **Raspberry Pi OS (64-bit)**
-	* Write to the Micro SD card
+2. Clone this repository.
+2. Configure:
+	1. Eject and re-insert the SD card
+	2. Copy all items from the cloned `SD_card/` folder to the root folder of the drive called **"boot"**
+	* ⚠️ Enter the actual WiFi SSID and password in `wpa_supplicant.conf`
 2. Eject the Micro SD card from the computer
-2. Insert the Micro SD card into the Ras Pi, connect the ethernet cable, connect the power supply; the Ras Pi will automatically start
+2. Insert the Micro SD card into the Ras Pi, connect all cables/devices, and finally start the Ras Pi
 
 
 ## Prepare the software, pt. 2 🦙 2️⃣
