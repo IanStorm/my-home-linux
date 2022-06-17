@@ -82,3 +82,6 @@ arm_boost=1
 
 [all]
 enable_uart=1
+
+# ⬇ Disable Bluetooth
+dtoverlay=disable-bt
