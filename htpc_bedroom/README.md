@@ -91,7 +91,15 @@ Be sure to call the following hardware your own:
 2. Add _Netflix_:
 	1. Login to Netflix
 	2. Create a _Chromium_ shortcut for `https://netflix.com/browse`
-2. Add _Spotify_:
+2. Add _OneDrive_:
+	1. Run `curl -L https://raw.github.com/pageauc/rclone4pi/master/rclone-install.sh | bash`
+	2. Run `rclone config`, create a new remote called `onedrive`
+	2. Go through the setup
+	2. Run `crontab -e`, then jump to the end of the file by pressing <kbd>CTRL</kbd>+<kbd>END</kbd>, and enter the following content:
+```sh
+0,30 * * * * /opt/IanStorm/my-home-raspi/every_30m.sh
+```
+5. Add _Spotify_:
 	1. Install the `https://open.spotify.com` Progressive Web App (PWA)
 	2. Login to Spotify
 2. Add _YouTube_:
