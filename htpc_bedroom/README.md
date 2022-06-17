@@ -1,5 +1,7 @@
 # HTPC Bedroom 🛏️
 
+[⬅ Back](../README.md)
+
 
 ## Prepare the hardware 🧰
 
