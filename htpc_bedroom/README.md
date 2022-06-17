@@ -16,6 +16,7 @@ Be sure to call the following hardware your own:
 	* 1x Micro SD card *(here: SanDisk Ultra 128GB)*
 	* 1x Power supply, Raspberry Pi-compatible 🔌 *(here: Official Micro USB Power Supply)*
 	* 1x Case, Raspberry Pi-compatible *(here: Argon One V2)*
+	* 1x Monitor *(here: Samsung T27A750)*
 	* 1x HDMI cable
 	* 1x Keyboard and mouse ⌨️🖱️ *(here: Logitech K400+)*
 
@@ -73,9 +74,9 @@ Be sure to call the following hardware your own:
 	2. Run `crontab -e`, select `/bin/nano` as your editor, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
 ```sh
 # my-home-raspi
-@reboot sleep 10s && cd /home/<USERNAME>/GitHub/IanStorm/my-home-raspi/ && git reset --hard && git pull
-@reboot sleep 10s && /opt/IanStorm/my-home-raspi/on_booted.sh
-0,30 * * * * sleep 10s && /opt/IanStorm/my-home-raspi/every_30m.sh
+@reboot sleep 30s && cd /home/<USERNAME>/GitHub/IanStorm/my-home-raspi/ && git reset --hard && git pull
+@reboot sleep 45s && /opt/IanStorm/my-home-raspi/on_booted.sh
+0,30 * * * * sleep 50s && /opt/IanStorm/my-home-raspi/every_30m.sh
 ```
 *
 	4. Exit via <kbd>CTRL</kbd>+<kbd>X</kbd>, then <kbd>y</kbd>, and finally <kbd>Enter</kbd>
