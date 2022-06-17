@@ -40,9 +40,13 @@ Be sure to call the following hardware your own:
 2. Set keyboard layout:
 	1. _Applications Menu_ ➡ _Preferences_ ➡ _Keyboard and Mouse_
 	2. _Keyboard and Mouse Settings_ window ➡ _Keyboard_ tab ➡ _Keyboard Layout…_ button ➡ Select the layout
-2. Increase GPU memory:
+2. Rename computer:
 	1. _Applications Menu_ ➡ _Preferences_ ➡ _Raspberry Pi Configuration_
-	2. _Raspberry Pi Configuration_ window ➡ _Performance_ tab ➡ Set _GPU Memory_ to `256`
+	2. _Raspberry Pi Configuration_ window ➡ _System_ tabs ➡ Set _Hostname_ to `htpc_bedroom`
+	2. Reboot
+2. Disable screen timeout:
+	1. _Applications Menu_ ➡ _Preferences_ ➡ _Raspberry Pi Configuration_
+	2. _Raspberry Pi Configuration_ window ➡ _Display_ tab ➡ Set _Screen Blanking_ to _Disable_
 	2. Reboot
 2. Set UI scaling:
 	1. _Applications Menu_ ➡ _Preferences_ ➡ _Appearance Settings_
@@ -67,8 +71,9 @@ Be sure to call the following hardware your own:
 	2. Run `crontab -e`, select `/bin/nano` as your editor, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
 ```sh
 # my-home-raspi
-@reboot sleep 10 && cd /home/<USERNAME>/GitHub/IanStorm/my-home-raspi/ && git reset --hard && git pull
-@reboot sleep 10 && /opt/IanStorm/my-home-raspi/on_booted.sh
+@reboot sleep 10s && cd /home/<USERNAME>/GitHub/IanStorm/my-home-raspi/ && git reset --hard && git pull
+@reboot sleep 10s && /opt/IanStorm/my-home-raspi/on_booted.sh
+0,30 * * * * sleep 10s && /opt/IanStorm/my-home-raspi/every_30m.sh
 ```
 *
 	4. Exit via <kbd>CTRL</kbd>+<kbd>X</kbd>, then <kbd>y</kbd>, and finally <kbd>Enter</kbd>
@@ -77,14 +82,14 @@ Be sure to call the following hardware your own:
 
 ## Prepare the software, pt. 2 🦙 2️⃣
 
-1. Configure _Chromium_:
+1. Add _Argone One_ software: Run `curl https://download.argon40.com/argon1.sh | bash`
+2. Configure _Chromium_:
 	1. Enable DRM compatibility:
 		1. Run `sudo apt update && sudo apt install -y chromium-browser:armhf`
 		2. Run `sudo apt update && sudo apt install -y libwidevinecdm0`
-	2. Prevent "Page unresponsive" issue: Run `echo 'export CHROMIUM_FLAGS="$CHROMIUM_FLAGS --use-gl=egl"' | sudo tee /etc/chromium.d/egl`
 	2. Use dark theme
 2. Add _GShutdown_:
-	1. [Download](https://pkgs.org/download/gshutdown) and install the `.deb` package; see https://github.com/Asher256/gshutdown
+	1. [Download](http://ports.ubuntu.com/pool/universe/g/gshutdown/gshutdown_0.2-0ubuntu9_arm64.deb) and install the `.deb` package; see https://pkgs.org/download/gshutdown and https://github.com/Asher256/gshutdown
 	2. Set custom commands:
 		* Turn off the computer: `shutdown`
 		* Restart computer: `reboot`
@@ -95,18 +100,19 @@ Be sure to call the following hardware your own:
 	1. Run `curl -L https://raw.github.com/pageauc/rclone4pi/master/rclone-install.sh | bash`
 	2. Run `rclone config`, create a new remote called `onedrive`
 	2. Go through the setup
-	2. Run `crontab -e`, then jump to the end of the file by pressing <kbd>CTRL</kbd>+<kbd>END</kbd>, and enter the following content:
-```sh
-0,30 * * * * /opt/IanStorm/my-home-raspi/every_30m.sh
-```
-5. Add _Spotify_:
+	* ☝ OneDrive sync is done via _crontab_
+2. Add _Spotify_:
 	1. Install the `https://open.spotify.com` Progressive Web App (PWA)
 	2. Login to Spotify
+2. Configure _VLC_
 2. Add _YouTube_:
-	1. Install the `https://youtube.com` PWA
-	2. Login to YouTube
+	1. Login to YouTube
+	2. Install the `https://youtube.com` PWA
 	2. Set dark theme as preferred theme
 	2. Settings ➡ Playback and performance ➡ Disable inline playback
+2. Auto-install security-relevant updates:
+	1. Run `sudo apt update && sudo apt install -y unattended-upgrades`
+	2. Run `sudo dpkg-reconfigure --priority=low unattended-upgrades`, select "Yes" during the setup
 
 
 ## Appendix
@@ -114,8 +120,8 @@ Be sure to call the following hardware your own:
 
 ### Sources 📙
 
-* https://forums.raspberrypi.com/viewtopic.php?p=1990606
 * https://linuxhint.com/rasperberry_pi_wifi_wpa_supplicant/
 * https://www.electromaker.io/tutorial/blog/how-to-stream-netflix-on-raspberry-pi
 * https://github.com/raspberrypi/Raspberry-Pi-OS-64bit/issues/172#issuecomment-1123462739
 * https://jarrodstech.net/how-to-raspberry-pi-onedrive-sync/
+* https://www.blog.berrybase.de/blog/2022/02/23/den-raspberry-pi-absichern/
