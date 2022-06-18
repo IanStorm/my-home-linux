@@ -104,6 +104,10 @@ Be sure to call the following hardware your own:
 	2. Run `rclone config`, create a new remote called `onedrive`
 	2. Go through the setup
 	* ☝ OneDrive sync is done via _crontab_
+2. Add _Parsec_:
+	1. Create a _Chromium_ shortcut for `https://web.parsec.app`
+	2. Login to Parsec
+	* ☝ The Parsec desktop app does not (yet) work on the Pi 4
 2. Add _Spotify_:
 	1. Install the `https://open.spotify.com` Progressive Web App (PWA)
 	2. Login to Spotify
@@ -127,4 +131,5 @@ Be sure to call the following hardware your own:
 * https://www.electromaker.io/tutorial/blog/how-to-stream-netflix-on-raspberry-pi
 * https://github.com/raspberrypi/Raspberry-Pi-OS-64bit/issues/172#issuecomment-1123462739
 * https://jarrodstech.net/how-to-raspberry-pi-onedrive-sync/
+* https://support.parsec.app/hc/en-us/articles/115002699012-Setting-Up-On-Raspberry-Pi-Raspbian-
 * https://www.blog.berrybase.de/blog/2022/02/23/den-raspberry-pi-absichern/
