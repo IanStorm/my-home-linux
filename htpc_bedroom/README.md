@@ -108,6 +108,9 @@ Be sure to call the following hardware your own:
 	1. Create a _Chromium_ shortcut for `https://web.parsec.app`
 	2. Login to Parsec
 	* ☝ The Parsec desktop app does not (yet) work on the Pi 4
+2. Add _Soolar_, the unofficial Logitech software:
+	1. Run `sudo apt install -y solaar`
+	2. Unplug and plug the Logitech USB connector
 2. Add _Spotify_:
 	1. Install the `https://open.spotify.com` Progressive Web App (PWA)
 	2. Login to Spotify
