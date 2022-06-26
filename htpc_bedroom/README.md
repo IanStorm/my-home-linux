@@ -16,6 +16,7 @@ Be sure to call the following hardware your own:
 	* 1x Micro SD card *(here: SanDisk Ultra 128GB)*
 	* 1x Power supply, Raspberry Pi-compatible 🔌 *(here: Official Micro USB Power Supply)*
 	* 1x Case, Raspberry Pi-compatible *(here: Argon One V2)*
+	* 1x Ethernet cable; WiFi access is possible, but won't be covered here
 	* 1x Monitor *(here: Samsung T27A750)*
 	* 1x HDMI cable
 	* 1x Keyboard and mouse ⌨️🖱️ *(here: Logitech K400+)*
@@ -32,7 +33,6 @@ Be sure to call the following hardware your own:
 2. Configure:
 	1. Eject and re-insert the SD card
 	2. Copy all items from the cloned `SD_card/` folder to the root folder of the drive called **"boot"**
-	* ⚠️ Enter the actual WiFi SSID and password in `wpa_supplicant.conf`
 2. Eject the Micro SD card from the computer
 2. Insert the Micro SD card into the Ras Pi, connect all cables/devices, and finally start the Ras Pi
 
@@ -130,7 +130,6 @@ Be sure to call the following hardware your own:
 
 ### Sources 📙
 
-* https://linuxhint.com/rasperberry_pi_wifi_wpa_supplicant/
 * https://www.electromaker.io/tutorial/blog/how-to-stream-netflix-on-raspberry-pi
 * https://github.com/raspberrypi/Raspberry-Pi-OS-64bit/issues/172#issuecomment-1123462739
 * https://jarrodstech.net/how-to-raspberry-pi-onedrive-sync/
