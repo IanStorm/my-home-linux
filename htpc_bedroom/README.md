@@ -135,3 +135,5 @@ Be sure to call the following hardware your own:
 * https://jarrodstech.net/how-to-raspberry-pi-onedrive-sync/
 * https://support.parsec.app/hc/en-us/articles/115002699012-Setting-Up-On-Raspberry-Pi-Raspbian-
 * https://www.blog.berrybase.de/blog/2022/02/23/den-raspberry-pi-absichern/
+* https://raspberrypi.stackexchange.com/a/133214
+* https://raspberrypi.stackexchange.com/a/125105

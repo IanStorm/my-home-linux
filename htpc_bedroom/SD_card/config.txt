@@ -88,3 +88,7 @@ dtoverlay=disable-bt
 
 # ⬇ Disable WiFi
 dtoverlay=disable-wifi
+
+# ⬇ Disable Ethernet LEDs
+dtparam=eth_led0=4
+dtparam=eth_led1=4
