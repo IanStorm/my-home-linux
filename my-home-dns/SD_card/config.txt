@@ -78,3 +78,6 @@ otg_mode=1
 arm_boost=1
 
 [all]
+
+# ⬇️ Disable Bluetooth
+dtoverlay=disable-bt
