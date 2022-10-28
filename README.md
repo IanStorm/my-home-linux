@@ -8,3 +8,4 @@ Centralizes and simplifies setup for Raspberry Pi machines in my home.
 
 1. Go through the respective device list:
 	* [HTPC bedroom 🛏️](./htpc_bedroom/README.md)
+	* [my-home-dns](./my-home-dns/README.md)
