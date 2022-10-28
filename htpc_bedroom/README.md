@@ -14,7 +14,7 @@ Be sure to call the following hardware your own:
 * Permanent, i.e. dedicated to the Ras Pi:
 	* 1x Raspberry Pi 🥧 *(here: Raspberry Pi 4, Model B, 4GB RAM)*
 	* 1x Micro SD card *(here: SanDisk Ultra 128GB)*
-	* 1x Power supply, Raspberry Pi-compatible 🔌 *(here: Official Micro USB Power Supply)*
+	* 1x Power supply, Raspberry Pi-compatible 🔌 *(here: Official USB-C Power Supply)*
 	* 1x Case, Raspberry Pi-compatible *(here: Argon One V2)*
 	* 1x Ethernet cable; WiFi access is possible, but won't be covered here
 	* 1x Monitor *(here: Samsung T27A750)*
