@@ -60,11 +60,13 @@ Be sure to call the following hardware your own:
 		2. Configure an output handler: Run `sudo apt update && sudo apt install -y postfix`, select "Local only" during the setup
 		2. Run `crontab -e`, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
 ```sh
-# Auto-start `my-home-raspi` on each boot
+# my-home-raspi
+MY_HOME_RASPI_DIR=/opt/IanStorm/my-home-raspi/
+# 	Auto-start on each boot
 @reboot sleep 30s && cd /home/pi/GitHub/IanStorm/my-home-raspi/ && git reset --hard && git pull
-@reboot sleep 45s && /opt/IanStorm/my-home-raspi/on_booted.sh
-# Auto-update `my-home-raspi` daily at 3:00am
-0 3 * * * /opt/IanStorm/my-home-raspi/update.sh
+@reboot cd $MY_HOME_RASPI_DIR ; sleep 45s && ./on_booted.sh
+# Auto-update daily at 3:00am
+0 3 * * * cd $MY_HOME_RASPI_DIR ; ./update.sh
 ```
 *
 	*
@@ -84,3 +86,4 @@ Be sure to call the following hardware your own:
 ### Sources 📙
 
 * [Raspberry Pi OS: No default username and password anymore (2022-04)](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/)
+* [What is the cron job working directory](https://cronitor.io/cron-reference/cron-job-working-directory)
