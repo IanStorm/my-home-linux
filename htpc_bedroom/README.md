@@ -105,10 +105,6 @@ Be sure to call the following hardware your own:
 	2. Run `rclone config`, create a new remote called `onedrive`
 	2. Go through the setup
 	* ☝ OneDrive sync is done via _crontab_
-2. Add _Parsec_:
-	1. Create a _Chromium_ shortcut for `https://web.parsec.app`
-	2. Login to Parsec
-	* ☝ The Parsec desktop app does not (yet) work on the Pi 4
 2. Add _Soolar_, the unofficial Logitech software:
 	1. Run `sudo apt install -y solaar`
 	2. Unplug and plug the Logitech USB connector
