@@ -77,7 +77,8 @@ MY_HOME_RASPI_DIR=/opt/IanStorm/my-home-raspi/
 
 ## Prepare the environment, pt. 2 🌍 2️⃣
 
-1. Register the Ras Pi as DNS in your router
+1. Register the Ras Pi as DNS in your router:
+	* [Fritz!Box](https://docs.pi-hole.net/routers/fritzbox/)
 
 
 ## Appendix
