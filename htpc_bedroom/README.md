@@ -91,6 +91,7 @@ Be sure to call the following hardware your own:
 		1. Run `sudo apt update && sudo apt install -y chromium-browser:armhf`
 		2. Run `sudo apt update && sudo apt install -y libwidevinecdm0`
 	2. Use dark theme
+	2. Install the [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) extension
 2. Add _GShutdown_:
 	1. [Download](http://ports.ubuntu.com/pool/universe/g/gshutdown/gshutdown_0.2-0ubuntu9_arm64.deb) and install the `.deb` package; see https://pkgs.org/download/gshutdown and https://github.com/Asher256/gshutdown
 	2. Set custom commands:
