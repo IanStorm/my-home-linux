@@ -5,8 +5,9 @@
 # ⬇️ Removes unused Docker stuff with a delay of 1 day
 ./clean.sh
 
-./stop.sh
-
+# ⬇️ Pulling needs to be done before stopping the DNS resolver
 ./get.sh
 
-./start.sh
+./stop.sh
+
+sudo reboot

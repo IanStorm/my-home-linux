@@ -63,8 +63,7 @@ Be sure to call the following hardware your own:
 # my-home-raspi
 MY_HOME_RASPI_DIR=/opt/IanStorm/my-home-raspi/
 # 	Auto-start on each boot
-@reboot sleep 30s && cd /home/pi/GitHub/IanStorm/my-home-raspi/ && git reset --hard && git pull
-@reboot cd $MY_HOME_RASPI_DIR ; sleep 45s && ./on_booted.sh
+@reboot cd $MY_HOME_RASPI_DIR ; sleep 30s && ./on_booted.sh
 # Auto-update daily at 3:00am
 0 3 * * * cd $MY_HOME_RASPI_DIR ; ./update.sh
 ```
@@ -76,6 +75,8 @@ MY_HOME_RASPI_DIR=/opt/IanStorm/my-home-raspi/
 
 
 ## Prepare the environment, pt. 2 🌍 2️⃣
+
+⚠️ Ensure that Pi-hole is running, before setting it as DNS in your router, otherwise the Docker image cannot be pulled.
 
 1. Register the Ras Pi as DNS in your router:
 	* [Fritz!Box](https://docs.pi-hole.net/routers/fritzbox/)
