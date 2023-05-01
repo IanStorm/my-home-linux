@@ -5,3 +5,7 @@
 # ⬇ 	👀 https://stackoverflow.com/a/36853636
 echo 0 | sudo tee /sys/class/leds/PWR/brightness
 echo none | sudo tee /sys/class/leds/PWR/trigger
+
+# ⬇ Set audio volume
+# ⬇ 	👀 https://raspberrypi.stackexchange.com/a/37132
+amixer sset 'Master' 25%
