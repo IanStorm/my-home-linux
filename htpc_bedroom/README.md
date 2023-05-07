@@ -81,6 +81,14 @@ Be sure to call the following hardware your own:
 *
 	4. Exit via <kbd>CTRL</kbd>+<kbd>X</kbd>, then <kbd>y</kbd>, and finally <kbd>Enter</kbd>
 	* ☝ _crontab_ logs are found at `/var/mail/<USERNAME>`
+4. Configure _profile_:
+	1. Run `nano ~/.profile`, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
+```sh
+# my-home-raspi
+/opt/IanStorm/my-home-raspi/on_user_login.sh
+```
+*
+	2. Exit via <kbd>CTRL</kbd>+<kbd>X</kbd>, then <kbd>y</kbd>, and finally <kbd>Enter</kbd>
 
 
 ## Prepare the software, pt. 2 🦙 2️⃣
@@ -134,3 +142,4 @@ Be sure to call the following hardware your own:
 * https://www.blog.berrybase.de/blog/2022/02/23/den-raspberry-pi-absichern/
 * https://raspberrypi.stackexchange.com/a/133214
 * https://raspberrypi.stackexchange.com/a/125105
+* [StackExchange: How to run a script after user login](https://unix.stackexchange.com/a/56088/343022)
