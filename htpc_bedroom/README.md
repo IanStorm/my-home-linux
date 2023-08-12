@@ -64,19 +64,19 @@ Be sure to call the following hardware your own:
 1. Clone _this_ repository:
 	1. Run `mkdir -p ~/GitHub/IanStorm/`
 	2. Run `cd ~/GitHub/IanStorm/`
-	2. Run `git clone https://github.com/IanStorm/my-home-raspi.git`
+	2. Run `git clone https://github.com/IanStorm/my-home-linux.git`
 2. Map cloned folder:
 	1. Run `sudo mkdir -p /opt/IanStorm/`
-	2. Run `sudo ln --symbolic /home/<USERNAME>/GitHub/IanStorm/my-home-raspi/htpc_bedroom/opt/IanStorm/my-home-raspi/ /opt/IanStorm/`
+	2. Run `sudo ln --symbolic /home/<USERNAME>/GitHub/IanStorm/my-home-linux/htpc_bedroom/opt/IanStorm/my-home-linux/ /opt/IanStorm/`
 2. Configure _crontab_:
 	1. Run `crontab -e`, select `/bin/nano` as your editor, exit via <kbd>CTRL</kbd>+<kbd>X</kbd>
 	2. Configure an output handler: Run `sudo apt update && sudo apt install -y postfix`, select "Local only" during the setup
 	2. Run `crontab -e`, select `/bin/nano` as your editor, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
 ```sh
-# my-home-raspi
-@reboot sleep 30s && cd /home/<USERNAME>/GitHub/IanStorm/my-home-raspi/ && git reset --hard && git pull
-@reboot sleep 45s && /opt/IanStorm/my-home-raspi/on_booted.sh
-0,30 * * * * sleep 50s && /opt/IanStorm/my-home-raspi/every_30m.sh
+# my-home-linux
+@reboot sleep 30s && cd /home/<USERNAME>/GitHub/IanStorm/my-home-linux/ && git reset --hard && git pull
+@reboot sleep 45s && /opt/IanStorm/my-home-linux/on_booted.sh
+0,30 * * * * sleep 50s && /opt/IanStorm/my-home-linux/every_30m.sh
 ```
 *
 	4. Exit via <kbd>CTRL</kbd>+<kbd>X</kbd>, then <kbd>y</kbd>, and finally <kbd>Enter</kbd>
@@ -84,8 +84,8 @@ Be sure to call the following hardware your own:
 4. Configure _profile_:
 	1. Run `nano ~/.profile`, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
 ```sh
-# my-home-raspi
-/opt/IanStorm/my-home-raspi/on_user_login.sh
+# my-home-linux
+/opt/IanStorm/my-home-linux/on_user_login.sh
 ```
 *
 	2. Exit via <kbd>CTRL</kbd>+<kbd>X</kbd>, then <kbd>y</kbd>, and finally <kbd>Enter</kbd>
