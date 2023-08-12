@@ -83,12 +83,12 @@ arm_boost=1
 [all]
 enable_uart=1
 
-# ⬇ Disable Bluetooth
+# ⬇️ Disable Bluetooth
 dtoverlay=disable-bt
 
-# ⬇ Disable WiFi
+# ⬇️ Disable WiFi
 dtoverlay=disable-wifi
 
-# ⬇ Disable Ethernet LEDs
+# ⬇️ Disable Ethernet LEDs
 dtparam=eth_led0=4
 dtparam=eth_led1=4

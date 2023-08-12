@@ -28,7 +28,7 @@ Be sure to call the following hardware your own:
 Start with the computer:
 1. Connect the Micro SD card to the computer
 2. Download, install, and run **Raspberry Pi Imager**:
-	1. Choose OS: Raspberry Pi OS (other) ➡ **Raspberry Pi OS (64-bit)**
+	1. Choose OS: Raspberry Pi OS (other) ➡️ **Raspberry Pi OS (64-bit)**
 	2. Write to the Micro SD card
 	2. Eject the Micro SD card from the computer
 	* Tested with v1.7.2 on Windows
@@ -36,8 +36,8 @@ Start with the computer:
 Now switch to the Raspberry Pi:
 1. Insert the Micro SD card into the Ras Pi, connect all cables/devices, and finally start the Ras Pi
 2. Go through the initial setup of the operating system
-2. Run (the preinstalled) **Raspberry Pi Imager**: _Applications Menu_ ➡ _Accessories_ ➡ _Imager_:
-	1. Choose OS: Raspberry Pi OS (other) ➡ **Raspberry Pi OS (64-bit)**
+2. Run (the preinstalled) **Raspberry Pi Imager**: _Applications Menu_ ➡️ _Accessories_ ➡️ _Imager_:
+	1. Choose OS: Raspberry Pi OS (other) ➡️ **Raspberry Pi OS (64-bit)**
 	2. Write to the NVMe SSD
 	3. Shutdown the Ras Pi
 2. Eject the SD card, such that only the NVMe SSD is left
@@ -50,20 +50,20 @@ Now switch to the Raspberry Pi:
 	1. Copy all items from the repositories' `boot/` folder to the Ras Pi's `/boot/` folder
 	2. Reboot
 2. Set keyboard layout:
-	1. _Applications Menu_ ➡ _Preferences_ ➡ _Keyboard and Mouse_
-	2. _Keyboard and Mouse Settings_ window ➡ _Keyboard_ tab ➡ _Keyboard Layout…_ button ➡ Select the layout
+	1. _Applications Menu_ ➡️ _Preferences_ ➡️ _Keyboard and Mouse_
+	2. _Keyboard and Mouse Settings_ window ➡️ _Keyboard_ tab ➡️ _Keyboard Layout…_ button ➡️ Select the layout
 2. Rename computer:
-	1. _Applications Menu_ ➡ _Preferences_ ➡ _Raspberry Pi Configuration_
-	2. _Raspberry Pi Configuration_ window ➡ _System_ tabs ➡ _Change Hostname…_ button ➡ Set _Hostname_ to `htpc-bedroom`
+	1. _Applications Menu_ ➡️ _Preferences_ ➡️ _Raspberry Pi Configuration_
+	2. _Raspberry Pi Configuration_ window ➡️ _System_ tabs ➡️ _Change Hostname…_ button ➡️ Set _Hostname_ to `htpc-bedroom`
 	2. Reboot
 2. Disable screen timeout:
-	1. _Applications Menu_ ➡ _Preferences_ ➡ _Raspberry Pi Configuration_
-	2. _Raspberry Pi Configuration_ window ➡ _Display_ tab ➡ Set _Screen Blanking_ to _Disable_
+	1. _Applications Menu_ ➡️ _Preferences_ ➡️ _Raspberry Pi Configuration_
+	2. _Raspberry Pi Configuration_ window ➡️ _Display_ tab ➡️ Set _Screen Blanking_ to _Disable_
 	2. Reboot
 2. Set UI scaling:
-	1. _Applications Menu_ ➡ _Preferences_ ➡ _Appearance Settings_
-	2. _Appearance Settings_ window ➡ _Defaults_ tabs ➡ _Set Defaults_ button next to _For large screens_
-2. _Panel Preferences_ window ➡ _Panel Applets_ tab ➡ Add and configure _Resource monitors_
+	1. _Applications Menu_ ➡️️ _Preferences_ ➡️️ _Appearance Settings_
+	2. _Appearance Settings_ window ➡️ _Defaults_ tabs ➡️ _Set Defaults_ button next to _For large screens_
+2. _Panel Preferences_ window ➡️ _Panel Applets_ tab ➡️ Add and configure _Resource monitors_
 
 
 ## Prepare the software, pt. 1 🦙 1️⃣
@@ -130,7 +130,7 @@ Now switch to the Raspberry Pi:
 2. Add _YouTube_:
 	1. Login to YouTube
 	2. Install the `https://youtube.com` PWA
-	2. Settings ➡ Playback and performance ➡ Disable inline playback
+	2. Settings ➡️ Playback and performance ➡️ Disable inline playback
 2. Auto-install security-relevant updates:
 	1. Run `sudo apt update && sudo apt install -y unattended-upgrades`
 	2. Run `sudo dpkg-reconfigure --priority=low unattended-upgrades`, select "Yes" during the setup
