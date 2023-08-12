@@ -11,11 +11,12 @@ Be sure to call the following hardware your own:
 	* A computer to run the [Rasperry Pi Imager](https://www.raspberrypi.org/downloads/) software
 	* ...with a mouse, keyboard, display, etc.
 	* ...with an SD card reader
+	* 1x Micro SD card *(here: SanDisk Ultra 128GB)*
 * Permanent, i.e. dedicated to the Ras Pi:
 	* 1x Raspberry Pi 🥧 *(here: Raspberry Pi 4, Model B, 4GB RAM)*
-	* 1x Micro SD card *(here: SanDisk Ultra 128GB)*
 	* 1x Power supply, Raspberry Pi-compatible 🔌 *(here: Official USB-C Power Supply)*
-	* 1x Case, Raspberry Pi-compatible *(here: Argon One V2)*
+	* 1x Case, Raspberry Pi-compatible *(here: Argon One V2 + Argon One M.2 NVMe Expansion Board)*
+	* 1x M.2 NVMe SSD
 	* 1x Ethernet cable; WiFi access is possible, but won't be covered here
 	* 1x Monitor *(here: Samsung T27A750)*
 	* 1x HDMI cable
@@ -24,28 +25,36 @@ Be sure to call the following hardware your own:
 
 ## Prepare the Operating System (OS)
 
+Start with the computer:
 1. Connect the Micro SD card to the computer
 2. Download, install, and run **Raspberry Pi Imager**:
 	1. Choose OS: Raspberry Pi OS (other) ➡ **Raspberry Pi OS (64-bit)**
 	2. Write to the Micro SD card
+	2. Eject the Micro SD card from the computer
 	* Tested with v1.7.2 on Windows
-2. Clone this repository.
-2. Configure:
-	1. Eject and re-insert the SD card
-	2. Copy all items from the cloned `SD_card/` folder to the root folder of the drive called **"boot"**
-2. Eject the Micro SD card from the computer
-2. Insert the Micro SD card into the Ras Pi, connect all cables/devices, and finally start the Ras Pi
+
+Now switch to the Raspberry Pi:
+1. Insert the Micro SD card into the Ras Pi, connect all cables/devices, and finally start the Ras Pi
+2. Go through the initial setup of the operating system
+2. Run (the preinstalled) **Raspberry Pi Imager**: _Applications Menu_ ➡ _Accessories_ ➡ _Imager_:
+	1. Choose OS: Raspberry Pi OS (other) ➡ **Raspberry Pi OS (64-bit)**
+	2. Write to the NVMe SSD
+	3. Shutdown the Ras Pi
+2. Eject the SD card, such that only the NVMe SSD is left
 
 
 ## Setup the OS
 
-1. Go through the initial setup of the operating system
+1. Go through the initial setup of the operating system (again)
+2. Configure:
+	1. Copy all items from the repositories' `boot/` folder to the Ras Pi's `/boot/` folder
+	2. Reboot
 2. Set keyboard layout:
 	1. _Applications Menu_ ➡ _Preferences_ ➡ _Keyboard and Mouse_
 	2. _Keyboard and Mouse Settings_ window ➡ _Keyboard_ tab ➡ _Keyboard Layout…_ button ➡ Select the layout
 2. Rename computer:
 	1. _Applications Menu_ ➡ _Preferences_ ➡ _Raspberry Pi Configuration_
-	2. _Raspberry Pi Configuration_ window ➡ _System_ tabs ➡ Set _Hostname_ to `htpc_bedroom`
+	2. _Raspberry Pi Configuration_ window ➡ _System_ tabs ➡ _Change Hostname…_ button ➡ Set _Hostname_ to `htpc-bedroom`
 	2. Reboot
 2. Disable screen timeout:
 	1. _Applications Menu_ ➡ _Preferences_ ➡ _Raspberry Pi Configuration_
@@ -71,7 +80,7 @@ Be sure to call the following hardware your own:
 2. Configure _crontab_:
 	1. Run `crontab -e`, select `/bin/nano` as your editor, exit via <kbd>CTRL</kbd>+<kbd>X</kbd>
 	2. Configure an output handler: Run `sudo apt update && sudo apt install -y postfix`, select "Local only" during the setup
-	2. Run `crontab -e`, select `/bin/nano` as your editor, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
+	2. Run `crontab -e`, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
 ```sh
 # my-home-linux
 @reboot sleep 30s && cd /home/<USERNAME>/GitHub/IanStorm/my-home-linux/ && git reset --hard && git pull
@@ -95,10 +104,8 @@ Be sure to call the following hardware your own:
 
 1. Add _Argone One_ software: Run `curl https://download.argon40.com/argon1.sh | bash`
 2. Configure _Chromium_:
-	1. Enable DRM compatibility:
-		1. Run `sudo apt update && sudo apt install -y chromium-browser:armhf`
-		2. Run `sudo apt update && sudo apt install -y libwidevinecdm0`
-	2. Use dark theme
+	1. Enable DRM compatibility: [✅ Since beginning of 2023 _Raspberry Pi OS_ ships Chromium with built-in DRM support](https://github.com/raspberrypi/Raspberry-Pi-OS-64bit/issues/11#issuecomment-1445205919)
+	2. Enable dark theme: Go to `chrome://flags`, search for `#enable-force-dark`, and set it to _Enabled_
 	2. Install the [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm) extension
 2. Add _GShutdown_:
 	1. [Download](http://ports.ubuntu.com/pool/universe/g/gshutdown/gshutdown_0.2-0ubuntu9_arm64.deb) and install the `.deb` package; see https://pkgs.org/download/gshutdown and https://github.com/Asher256/gshutdown
@@ -123,7 +130,6 @@ Be sure to call the following hardware your own:
 2. Add _YouTube_:
 	1. Login to YouTube
 	2. Install the `https://youtube.com` PWA
-	2. Set dark theme as preferred theme
 	2. Settings ➡ Playback and performance ➡ Disable inline playback
 2. Auto-install security-relevant updates:
 	1. Run `sudo apt update && sudo apt install -y unattended-upgrades`
