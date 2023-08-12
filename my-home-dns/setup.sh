@@ -18,11 +18,11 @@ sudo apt-get install -y docker-compose
 # ⬇️	Clone
 mkdir -p ~/GitHub/IanStorm/
 cd ~/GitHub/IanStorm/
-git clone https://github.com/IanStorm/my-home-raspi.git
+git clone https://github.com/IanStorm/my-home-linux.git
 
 # ⬇️	Map folder
 sudo mkdir -p /opt/IanStorm/
-sudo ln --symbolic /home/pi/GitHub/IanStorm/my-home-raspi/my-home-dns/opt/IanStorm/my-home-raspi/ /opt/IanStorm/
+sudo ln --symbolic /home/pi/GitHub/IanStorm/my-home-linux/my-home-dns/opt/IanStorm/my-home-linux/ /opt/IanStorm/
 
 # ⬇️	Restart Ras Pi
 sudo reboot

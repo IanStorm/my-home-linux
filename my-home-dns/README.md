@@ -60,12 +60,12 @@ Be sure to call the following hardware your own:
 		2. Configure an output handler: Run `sudo apt update && sudo apt install -y postfix`, select "Local only" during the setup
 		2. Run `crontab -e`, then jump to the end of the file via <kbd>CTRL</kbd>+<kbd>END</kbd>, and append the following content:
 ```sh
-# my-home-raspi
-MY_HOME_RASPI_DIR=/opt/IanStorm/my-home-raspi/
+# my-home-linux
+MY_HOME_LINUX_DIR=/opt/IanStorm/my-home-linux/
 # 	Auto-start on each boot
-@reboot cd $MY_HOME_RASPI_DIR ; sleep 30s && ./on_booted.sh
+@reboot cd $MY_HOME_LINUX_DIR ; sleep 30s && ./on_booted.sh
 # Auto-update daily at 3:00am
-0 3 * * * cd $MY_HOME_RASPI_DIR ; ./update.sh
+0 3 * * * cd $MY_HOME_LINUX_DIR ; ./update.sh
 ```
 *
 	*
