@@ -1,7 +1,7 @@
-# My Home - Raspberry Pi 🥧
+# My Home - Linux 🐧
 
 Garage project for **private purposes**.
-Centralizes and simplifies setup for Raspberry Pi machines in my home.
+Centralizes and simplifies setup for Linux machines in my home.
 
 
 ## How to use?
